@@ -1,0 +1,9 @@
+div {
+  width: calc(calc(100 + 10) + 1);
+  width: calc(calc(calc(1rem * 0.75) * 1.5) - 1rem);
+  width: calc(calc(calc(1rem * 0.75) * 1.5) - 1px);
+  width: calc(((1rem * 0.75) * 1.5) - 1px);
+  width: calc(-1px + (1.5 * (1rem * 0.75)));
+  width: calc(2rem * (2 * (2 + 3)) + 4 + (5/2));
+  width: calc((4 * 2) + 4.2 + 1 + (2rem * .4) + (2px * .4));
+}

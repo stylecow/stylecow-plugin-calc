@@ -1,0 +1,7 @@
+div {
+  width: calc(1 + 1);
+  width: calc(1 - 1);
+  width: calc(2 * 2);
+  width: calc(8 / 2);
+  width: calc((6 / 2) - (4 * 2) + 1);
+}

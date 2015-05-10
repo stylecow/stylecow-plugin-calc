@@ -1,0 +1,9 @@
+div {
+	width: 111;
+	width: 0.13rem;
+	width: calc(1.13rem - 1px);
+	width: calc(1.13rem - 1px);
+	width: calc(-1px + 1.13rem);
+	width: 26.5rem;
+	width: calc(8 + 4.2 + 1 + 0.8rem + 0.8px);
+}

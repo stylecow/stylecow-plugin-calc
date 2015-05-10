@@ -1,0 +1,4 @@
+div {
+  width: calc(2 * 50%);
+  width: calc(120% * 50%);
+}

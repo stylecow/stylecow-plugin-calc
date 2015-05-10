@@ -1,0 +1,7 @@
+div {
+  width: calc(3px * 2 - 1px);
+  width: calc(3rem * 2 - 1rem);
+  width: calc(3em * 2 - 1em);
+  width: calc(3pt * 2 - 1pt);
+  width: calc(3vh * 2 - 1vh);
+}
