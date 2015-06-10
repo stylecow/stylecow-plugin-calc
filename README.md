@@ -1,6 +1,8 @@
 stylecow plugin calc
 ====================
 
+[![Build Status](https://travis-ci.org/stylecow/stylecow-plugin-calc.svg?branch=master)](https://travis-ci.org/stylecow/stylecow-plugin-calc)
+
 Stylecow plugin to resolve some `calc()` functions.
 
 You write:
