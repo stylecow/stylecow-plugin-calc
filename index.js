@@ -1,6 +1,8 @@
-module.exports = function (stylecow) {
+"use strict";
 
-	stylecow.addTask({
+module.exports = function (tasks) {
+
+	tasks.addTask({
 		filter: {
 			type: 'Function',
 			name: 'calc'
@@ -10,20 +12,15 @@ module.exports = function (stylecow) {
 		}
 	});
 
-	stylecow.addTask({
-		filter: {
-			type: 'Expression'
-		},
+	tasks.addTask({
+		filter: 'Expression',
 		fn: function (expression) {
 			resolve(expression);
 		}
 	});
 
 	function resolve (element) {
-		var mainUnit;
-		var units = element.getAll({
-			type: 'Unit'
-		});
+		var mainUnit, units = element.getAll('Unit');
 
 		//Check the unit used in this function
 		units.forEach(function (unit) {
@@ -54,24 +51,14 @@ module.exports = function (stylecow) {
 			unit.replaceWith(unit.get('Number'));
 		});
 
-		var number = (new stylecow.Number()).setName(eval(element.join(' ')));
+		var number = eval(element.join(' '));
 
 		if (mainUnit === undefined) {
-			round(number);
-			element.replaceWith(number);
+			element.replaceWithCode(number.toFixed(2), 'Number');
+		} else if (mainUnit === '%') {
+			element.replaceWithCode((number *= 100).toFixed(2) + '%', 'Unit');
 		} else {
-			var unit = (new stylecow.Unit()).setName(mainUnit);
-
-			if (unit.name === '%') {
-				number.name *= 100;
-			}
-			round(number);
-			unit.push(number);
-			element.replaceWith(unit);
+			element.replaceWithCode(number.toFixed(2) + mainUnit, 'Unit');
 		}
-	}
-
-	function round (number) {
-		number.name = parseFloat(number.name.toFixed(2));
 	}
 };
